@@ -1,5 +1,3 @@
-//
-
 import Foundation
 
 struct Exercise: Identifiable, Codable {

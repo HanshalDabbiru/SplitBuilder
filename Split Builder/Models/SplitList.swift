@@ -10,7 +10,7 @@ struct SplitList: View {
     let saveAction: () -> Void
     
     var body: some View  {
-        NavigationStack  {
+        NavigationView  {
             List($splits, editActions: .all) { $split in
                 NavigationLink(destination: SplitView(split: $split, saveAction: {})) {
                     TextField("", text: $split.name)
@@ -36,6 +36,7 @@ struct SplitList: View {
             }
 
         }
+        .navigationViewStyle(.stack)
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }
         }
@@ -46,6 +47,7 @@ struct SplitList: View {
         s.id = UUID()
         s.theme = Theme.allCases.randomElement()!
         splits.append(s)
+        newSplit.name = ""
     }
 }
 

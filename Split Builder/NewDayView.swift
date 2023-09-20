@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct NewDayView: View {
-    @State private var newDay = Day.emptyDay
+    @State private var newDay = Day(name: "", exercises: [], theme: .sky)
     @Binding var split: Split
     @Binding var isPresentingNewDayView: Bool
     var body: some View {
@@ -11,7 +11,6 @@ struct NewDayView: View {
                     ToolbarItem(placement: .confirmationAction) {
                         Button("Done") {
                             split.dayList.append(newDay)
-                            print(split)
                             isPresentingNewDayView = false
                         }
                     }

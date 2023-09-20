@@ -40,8 +40,7 @@ struct Split: Identifiable, Codable{
             }
         }
         return -1
-    }
-    
+    }   
 }
 
 extension Split {

@@ -13,6 +13,7 @@
 		03456EBF2AAA704500B17884 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456EBE2AAA704500B17884 /* ThemePicker.swift */; };
 		03456EC12AAA7B2600B17884 /* SplitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03456EC02AAA7B2600B17884 /* SplitStore.swift */; };
 		0345EB362AB0E48800ED706A /* SplitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0345EB352AB0E48800ED706A /* SplitList.swift */; };
+		0378699F2AB98881006B835E /* sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0378699E2AB98881006B835E /* sample.swift */; };
 		03B9AF462A7F2E9C0013BB55 /* Split_BuilderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9AF452A7F2E9C0013BB55 /* Split_BuilderApp.swift */; };
 		03B9AF482A7F2E9C0013BB55 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9AF472A7F2E9C0013BB55 /* SplitView.swift */; };
 		03B9AF4A2A7F2E9E0013BB55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B9AF492A7F2E9E0013BB55 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		03456EBE2AAA704500B17884 /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		03456EC02AAA7B2600B17884 /* SplitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitStore.swift; sourceTree = "<group>"; };
 		0345EB352AB0E48800ED706A /* SplitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplitList.swift; path = Models/SplitList.swift; sourceTree = "<group>"; };
+		0378699E2AB98881006B835E /* sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sample.swift; sourceTree = "<group>"; };
 		03B9AF422A7F2E9C0013BB55 /* Split Builder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Split Builder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B9AF452A7F2E9C0013BB55 /* Split_BuilderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Split_BuilderApp.swift; sourceTree = "<group>"; };
 		03B9AF472A7F2E9C0013BB55 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		03B9AF392A7F2E9C0013BB55 = {
 			isa = PBXGroup;
 			children = (
+				0378699E2AB98881006B835E /* sample.swift */,
 				03B9AF442A7F2E9C0013BB55 /* Split Builder */,
 				03B9AF432A7F2E9C0013BB55 /* Products */,
 			);
@@ -209,6 +212,7 @@
 				03B9AF462A7F2E9C0013BB55 /* Split_BuilderApp.swift in Sources */,
 				0345EB362AB0E48800ED706A /* SplitList.swift in Sources */,
 				03456EB92AA5813F00B17884 /* DayPicker.swift in Sources */,
+				0378699F2AB98881006B835E /* sample.swift in Sources */,
 				03B9AF562A7F32900013BB55 /* ExerciseCardView.swift in Sources */,
 				03456EC12AAA7B2600B17884 /* SplitStore.swift in Sources */,
 				03B9AF542A7F30A50013BB55 /* Exercise.swift in Sources */,

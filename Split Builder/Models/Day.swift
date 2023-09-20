@@ -21,7 +21,7 @@ struct Day: Identifiable, Codable {
     func time() -> Int {
         var time: Int = 0
         for exercise in exercises {
-            time += exercise.sets * 2
+            time += exercise.sets * 3
         }
         return time
     }

@@ -6,9 +6,13 @@ class SharedData: ObservableObject {
     
     func handleData(url: URL) {
         do {
-            let data = try Data(contentsOf: url)
+            var data: Data? = try Data(contentsOf: url)
+            //var d: String? = String(data: data, encoding: .utf8)
+            //var e = d!
+            var unwrapped: Data = data!
             let decoder = JSONDecoder()
-            var split = try decoder.decode(Split.self, from: data)
+            var s: String = String(data: unwrapped, encoding: .utf8)!
+            var split = try decoder.decode(Split.self, from: s.data(using: .utf8)!)
             split.id = UUID()
             sharedSplit = split
         }
