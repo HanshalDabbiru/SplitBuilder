@@ -17,7 +17,7 @@ struct SplitView: View {
             try data.write(to: outfile)
         }
         catch {
-            print(error)
+            fatalError(error.localizedDescription)
         }
         
     }
@@ -53,7 +53,7 @@ struct SplitView: View {
                 .navigationTitle(split.name)
                 .toolbar {
                     ToolbarItem {
-                        ShareLink("share split", item: fileURL ?? URL(fileURLWithPath: ""))
+                        ShareLink("share split", item: fileURL)
                             .onTapGesture {
                                 save()
                             }
@@ -84,7 +84,6 @@ struct SplitView: View {
             if phase == .inactive { saveAction() }
         }
         .onAppear() {
-            print("HIIIIIIIIII")
             save()
         }
     }

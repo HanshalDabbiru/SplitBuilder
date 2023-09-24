@@ -18,11 +18,8 @@ struct Split_BuilderApp: App {
                 }
                 .task {
                     do {
-                        print(split.split)
                         try await split.load()
-                        print(split.split)
                     } catch {
-                        print(error)
                         fatalError(error.localizedDescription)
                     }
                 }

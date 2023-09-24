@@ -72,7 +72,6 @@
 		03B9AF392A7F2E9C0013BB55 = {
 			isa = PBXGroup;
 			children = (
-				0378699E2AB98881006B835E /* sample.swift */,
 				03B9AF442A7F2E9C0013BB55 /* Split Builder */,
 				03B9AF432A7F2E9C0013BB55 /* Products */,
 			);
@@ -104,6 +103,7 @@
 				03456EB82AA5813F00B17884 /* DayPicker.swift */,
 				03B9AF552A7F32900013BB55 /* ExerciseCardView.swift */,
 				03B9AF6A2A86E6480013BB55 /* ExerciseSelectCardView.swift */,
+				0378699E2AB98881006B835E /* sample.swift */,
 				03B9AF492A7F2E9E0013BB55 /* Assets.xcassets */,
 				03B9AF4B2A7F2E9E0013BB55 /* Preview Content */,
 			);

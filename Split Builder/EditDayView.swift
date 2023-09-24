@@ -34,9 +34,6 @@ struct EditDayView: View {
                 .listRowBackground(Color.clear)
                 
             }
-            .onAppear() {
-                print(day)
-            }
         }
     }
 }

@@ -95,6 +95,21 @@
                   endingLineNumber = "20"
                   offsetFromSymbolStart = "1908">
                </Location>
+               <Location
+                  uuid = "37575F27-F630-4B78-BA6D-569149A47528 - cf83208e010eb1bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Split_Builder.SharedData.handleData(url: Foundation.URL) -&gt; ()"
+                  moduleName = "Split Builder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hdabbiru/AppleApps/Split%20Builder/Split%20Builder/Models/SharedData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "1566">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
