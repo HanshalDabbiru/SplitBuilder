@@ -1,6 +1,6 @@
 import Foundation
 
-struct Exercise: Identifiable, Codable {
+struct Exercise: Identifiable, Codable, Equatable {
     var name: String
     var weight: Double
     var sets: Int

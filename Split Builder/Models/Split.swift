@@ -1,6 +1,12 @@
 import Foundation
+import UniformTypeIdentifiers
+import CoreTransferable
 
-struct Split: Identifiable, Codable{
+extension UTType {
+    static let splitData = UTType(exportedAs: "com.HDCreators.SplitBuilder.SplitData")
+}
+
+struct Split: Identifiable, Codable {
     var name: String
     var dayList: [Day]
     var id: UUID = UUID()
@@ -41,6 +47,12 @@ struct Split: Identifiable, Codable{
         }
         return -1
     }   
+}
+
+extension Split: Transferable {
+    static var transferRepresentation: some TransferRepresentation {
+        CodableRepresentation(contentType: .splitData)
+    }
 }
 
 extension Split {

@@ -8,14 +8,14 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeName</key>
-			<string>TaskList Data</string>
+			<string>Split Builder Data</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.HDCreators.TaskList.TaskListData</string>
+				<string>com.HDCreators.SplitBuilder.SplitData</string>
 			</array>
 			<key>LSRankHandler</key>
 			<string>Owner</string>
@@ -24,34 +24,21 @@
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
-			<key>UTExportedTypeDeclarations</key>
-			<array>
-				<dict>
-					<key>UTTypeConformsTo</key>
-					<array>
-						<string></string>
-					</array>
-					<key>UTTypeIdentifier</key>
-					<string></string>
-					<key>UTTypeTagSpecification</key>
-					<dict/>
-				</dict>
-			</array>
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.json</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>TaskList Data</string>
+			<string>Split Builder Data</string>
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
-			<string>com.HDCreators.TaskList.TaskListData</string>
+			<string>com.HDCreators.SplitBuilder.SplitData</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>data</string>
+					<string>split</string>
 				</array>
 			</dict>
 		</dict>

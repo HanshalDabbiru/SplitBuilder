@@ -6,9 +6,9 @@ struct SplitList: View {
     @State var newSplit: Split = Split(name: "", dayList: [], theme: Theme.allCases.randomElement()!)
     @Environment(\.scenePhase) private var scenePhase
     @EnvironmentObject var sharedSplitData: SharedData
-    
+
     let saveAction: () -> Void
-    
+
     var body: some View  {
         NavigationView  {
             List($splits, editActions: .all) { $split in
@@ -16,20 +16,24 @@ struct SplitList: View {
                     TextField("", text: $split.name)
                         .font(.largeTitle)
                         .padding()
-                    
+
                 }
                 .listRowBackground(split.theme.mainColor)
             }
             .navigationTitle("Splits")
             .toolbar {
                 ToolbarItem {
-                    Button(action: {isPresentingNewSplit = true}) {
+                    Button(action: { isPresentingNewSplit = true }) {
                         Image(systemName: "plus")
                     }
                     .alert("Enter split name", isPresented: $isPresentingNewSplit) {
                         TextField("Name", text: $newSplit.name)
                         Button("OK") {
                             add()
+                        }
+                        .disabled(newSplit.name.trimmingCharacters(in: .whitespaces).isEmpty)
+                        Button("Cancel", role: .cancel) {
+                            newSplit.name = ""
                         }
                     }
                 }
@@ -41,11 +45,12 @@ struct SplitList: View {
             if phase == .inactive { saveAction() }
         }
     }
-    
+
     func add() {
         var s = newSplit
         s.id = UUID()
         s.theme = Theme.allCases.randomElement()!
+        s.name = newSplit.name.trimmingCharacters(in: .whitespaces)
         splits.append(s)
         newSplit.name = ""
     }
@@ -95,4 +100,3 @@ extension SplitList {
                 ], theme: Theme.orange)
     ]
 }
-

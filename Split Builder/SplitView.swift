@@ -8,21 +8,8 @@ struct SplitView: View {
     @Binding var split: Split
     
     @Environment(\.scenePhase) private var scenePhase
-    
+
     let saveAction: () -> Void
-    func save() {
-        do {
-            let data = try JSONEncoder().encode(split)
-            let outfile = fileURL
-            try data.write(to: outfile)
-        }
-        catch {
-            fatalError(error.localizedDescription)
-        }
-        
-    }
-    
-    let fileURL = FileManager.default.temporaryDirectory.appendingPathComponent("send.data")
     var body: some View {
             VStack {
                 List {
@@ -53,10 +40,7 @@ struct SplitView: View {
                 .navigationTitle(split.name)
                 .toolbar {
                     ToolbarItem {
-                        ShareLink("share split", item: fileURL)
-                            .onTapGesture {
-                                save()
-                            }
+                        ShareLink("Share Split", item: split, preview: SharePreview(split.name))
                     }
                     ToolbarItem {
                         Button(action: {isPresentingNewDayView = true}) {
@@ -82,9 +66,6 @@ struct SplitView: View {
         }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }
-        }
-        .onAppear() {
-            save()
         }
     }
 }

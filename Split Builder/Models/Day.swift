@@ -1,6 +1,6 @@
 import Foundation
 
-struct Day: Identifiable, Codable {
+struct Day: Identifiable, Codable, Equatable {
     var name: String
     var exercises: [Exercise]
     var tempTotalExercises: [Exercise]
