@@ -23,68 +23,37 @@ struct EditDayView: View {
     }
 
     var body: some View {
-        VStack {
-            Form {
-                Section(header: Text("Day Info")) {
-                    TextField("Day Name", text: $draftDay.name)
-                    DayPicker(editDay: $draftDay)
-                }
-                Section(header: Text("Theme")) {
-                    ThemePicker(selectedTheme: $draftDay.theme)
-                }
-                Section(header: Text("Exercises")) {
-                    List($draftDay.exercises, editActions: .all) { $exercise in
-                        VStack {
-                            ExerciseSelectCardView(exercise: $exercise)
+        DayFormView(day: $draftDay)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
+                        if hasChanges {
+                            showDiscardAlert = true
+                        } else {
+                            dismiss()
                         }
                     }
                 }
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        let newExercise = Exercise(name: "", weight: 0, sets: 0, reps: 0, theme: draftDay.generateTheme())
-                        draftDay.exercises.append(newExercise)
-                    }) {
-                        Image(systemName: "plus.circle.fill")
-                            .foregroundColor(draftDay.theme.mainColor)
-                            .font(.system(size: 50))
-                    }
-                    Spacer()
-                }
-                .listRowBackground(Color.clear)
-            }
-        }
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel") {
-                    if hasChanges {
-                        showDiscardAlert = true
-                    } else {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") {
+                        draftDay.exercises.removeAll {
+                            $0.name.trimmingCharacters(in: .whitespaces).isEmpty
+                        }
+                        day = draftDay
                         dismiss()
                     }
+                    .disabled(dayNameIsEmpty)
                 }
             }
-            ToolbarItem(placement: .confirmationAction) {
-                Button("Save") {
-                    draftDay.exercises.removeAll {
-                        $0.name.trimmingCharacters(in: .whitespaces).isEmpty
-                    }
-                    day = draftDay
-                    dismiss()
-                }
-                .disabled(dayNameIsEmpty)
+            .alert("Discard Changes?", isPresented: $showDiscardAlert) {
+                Button("Discard", role: .destructive) { dismiss() }
+                Button("Keep Editing", role: .cancel) { }
+            } message: {
+                Text("Are you sure you want to discard your changes?")
             }
-        }
-        .alert("Discard Changes?", isPresented: $showDiscardAlert) {
-            Button("Discard", role: .destructive) { dismiss() }
-            Button("Keep Editing", role: .cancel) { }
-        } message: {
-            Text("Are you sure you want to discard your changes?")
-        }
     }
 }
-
 
 struct EditDayView_Preview: PreviewProvider {
     static var previews: some View {

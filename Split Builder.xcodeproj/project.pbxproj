@@ -29,6 +29,7 @@
 		03B9AF692A86D8380013BB55 /* NewDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9AF682A86D8380013BB55 /* NewDayView.swift */; };
 		03B9AF6B2A86E6480013BB55 /* ExerciseSelectCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9AF6A2A86E6480013BB55 /* ExerciseSelectCardView.swift */; };
 		03F31F122A980E9700B902A3 /* EditDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F31F112A980E9700B902A3 /* EditDayView.swift */; };
+		89585D462FD77DDB0084C9B5 /* DayFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89585D452FD77DDB0084C9B5 /* DayFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		03B9AF682A86D8380013BB55 /* NewDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayView.swift; sourceTree = "<group>"; };
 		03B9AF6A2A86E6480013BB55 /* ExerciseSelectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSelectCardView.swift; sourceTree = "<group>"; };
 		03F31F112A980E9700B902A3 /* EditDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDayView.swift; sourceTree = "<group>"; };
+		89585D452FD77DDB0084C9B5 /* DayFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				03B9AF5E2A8024330013BB55 /* DayCardView.swift */,
 				03456EBA2AA6EC4700B17884 /* DayDetailCardView.swift */,
 				03F31F112A980E9700B902A3 /* EditDayView.swift */,
+				89585D452FD77DDB0084C9B5 /* DayFormView.swift */,
 				03456EBE2AAA704500B17884 /* ThemePicker.swift */,
 				03B9AF682A86D8380013BB55 /* NewDayView.swift */,
 				03456EB82AA5813F00B17884 /* DayPicker.swift */,
@@ -215,6 +218,7 @@
 				0378699F2AB98881006B835E /* sample.swift in Sources */,
 				03B9AF562A7F32900013BB55 /* ExerciseCardView.swift in Sources */,
 				03456EC12AAA7B2600B17884 /* SplitStore.swift in Sources */,
+				89585D462FD77DDB0084C9B5 /* DayFormView.swift in Sources */,
 				03B9AF542A7F30A50013BB55 /* Exercise.swift in Sources */,
 				03B9AF5F2A8024330013BB55 /* DayCardView.swift in Sources */,
 				03B9AF6B2A86E6480013BB55 /* ExerciseSelectCardView.swift in Sources */,
