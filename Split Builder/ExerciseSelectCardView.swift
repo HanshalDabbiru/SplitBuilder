@@ -7,71 +7,75 @@ struct ExerciseSelectCardView: View {
         VStack {
             TextField("Exercise Name", text: $exercise.name)
 
-            HStack {
-                Slider(value: weightBinding, in: 0...300, step: 5) {
-                    Text("Weight")
+            ForEach(0..<exercise.plannedSetCount, id: \.self) { i in
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("Set \(i + 1)")
+                            .font(.body)
+                        Spacer()
+                        Button(role: .destructive) {
+                            removeSet(at: i)
+                        } label: {
+                            Image(systemName: "minus.circle.fill")
+                                .foregroundColor(.red)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                    HStack {
+                        Slider(value: $exercise.setList[i].weight, in: 0...300, step: 5) {
+                            Text("Weight")
+                        }
+                        HStack {
+                            Text("\(Int(exercise.setList[i].weight)) lbs")
+                            Image(systemName: "dumbbell.fill")
+                        }
+                        .fixedSize()
+                    }
+                    Stepper("\(exercise.setList[i].reps) reps",
+                            value: $exercise.setList[i].reps, in: 0...20)
                 }
-                HStack {
-                    Text("\(Int(exercise.weight)) lbs")
-                    Image(systemName: "dumbbell.fill")
+                .padding(.vertical)
+
+                if i < exercise.plannedSetCount - 1 {
+                    Divider()
                 }
             }
 
-            Stepper("\(exercise.sets) sets", value: setsBinding, in: 0...10)
-            Stepper("\(exercise.reps) reps", value: repsBinding, in: 0...20)
+            HStack {
+                Spacer()
+                Button(action: addSet) {
+                    HStack {
+                        Image(systemName: "plus.circle.fill")
+                            .foregroundColor(exercise.theme.mainColor)
+                            .font(.system(size: 35))
+                        Text("Add Set")
+                            .foregroundColor(exercise.theme.mainColor)
+                    }
+                }
+                Spacer()
+            }
         }
     }
 
-    // setList always has >= 1 entry, so these loops are never no-ops —
-    // weight and reps are readable and writable even when plannedSetCount is 0.
-    private var weightBinding: Binding<Double> {
-        Binding(
-            get: { exercise.weight },
-            set: { newWeight in
-                for i in exercise.setList.indices {
-                    exercise.setList[i].weight = newWeight
-                }
-            }
-        )
+    private func addSet() {
+        let template = exercise.setList[exercise.setList.count - 1]
+        exercise.plannedSetCount += 1
+        exercise.setList.append(WorkoutSet(weight: template.weight, reps: template.reps))
     }
 
-    private var repsBinding: Binding<Int> {
-        Binding(
-            get: { exercise.reps },
-            set: { newReps in
-                for i in exercise.setList.indices {
-                    exercise.setList[i].reps = newReps
-                }
-            }
-        )
-    }
-
-    // Reads and writes plannedSetCount (not setList.count).
-    // setList is kept at max(plannedSetCount, 1) entries so index 0
-    // always holds the current weight/reps as a template for future sets.
-    private var setsBinding: Binding<Int> {
-        Binding(
-            get: { exercise.plannedSetCount },
-            set: { newCount in
-                exercise.plannedSetCount = newCount
-                let target = max(newCount, 1)
-                let cur = exercise.setList.count
-                if target > cur {
-                    let template = exercise.setList[cur - 1]
-                    exercise.setList.append(contentsOf: (0..<(target - cur)).map { _ in
-                        WorkoutSet(weight: template.weight, reps: template.reps)
-                    })
-                } else if target < cur {
-                    exercise.setList = Array(exercise.setList.prefix(target))
-                }
-            }
-        )
+    private func removeSet(at index: Int) {
+        exercise.plannedSetCount -= 1
+        if exercise.plannedSetCount >= 1 {
+            exercise.setList.remove(at: index)
+        }
+        // When plannedSetCount reaches 0, setList keeps its one template entry.
     }
 }
 
 struct ExerciseSelectCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseSelectCardView(exercise: .constant(Exercise.sampleData))
-            .previewLayout(.fixed(width: 400, height: 120))
+        Form {
+            ExerciseSelectCardView(exercise: .constant(Exercise.sampleData))
+        }
     }
 }

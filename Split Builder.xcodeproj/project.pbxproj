@@ -29,7 +29,10 @@
 		03B9AF692A86D8380013BB55 /* NewDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9AF682A86D8380013BB55 /* NewDayView.swift */; };
 		03B9AF6B2A86E6480013BB55 /* ExerciseSelectCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B9AF6A2A86E6480013BB55 /* ExerciseSelectCardView.swift */; };
 		03F31F122A980E9700B902A3 /* EditDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F31F112A980E9700B902A3 /* EditDayView.swift */; };
+		892F2AFF2FEB17AB0074BE7A /* claude_prompt.md in Resources */ = {isa = PBXBuildFile; fileRef = 892F2AFE2FEB17AB0074BE7A /* claude_prompt.md */; };
+		892F2B012FEB1CAA0074BE7A /* DESIGN.md in Resources */ = {isa = PBXBuildFile; fileRef = 892F2B002FEB1CAA0074BE7A /* DESIGN.md */; };
 		89585D462FD77DDB0084C9B5 /* DayFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89585D452FD77DDB0084C9B5 /* DayFormView.swift */; };
+		89585D482FEB168F0084C9B5 /* SplitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89585D472FEB168F0084C9B5 /* SplitList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +60,10 @@
 		03B9AF682A86D8380013BB55 /* NewDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayView.swift; sourceTree = "<group>"; };
 		03B9AF6A2A86E6480013BB55 /* ExerciseSelectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSelectCardView.swift; sourceTree = "<group>"; };
 		03F31F112A980E9700B902A3 /* EditDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDayView.swift; sourceTree = "<group>"; };
+		892F2AFE2FEB17AB0074BE7A /* claude_prompt.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = claude_prompt.md; sourceTree = "<group>"; };
+		892F2B002FEB1CAA0074BE7A /* DESIGN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DESIGN.md; sourceTree = "<group>"; };
 		89585D452FD77DDB0084C9B5 /* DayFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayFormView.swift; sourceTree = "<group>"; };
+		89585D472FEB168F0084C9B5 /* SplitList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,8 @@
 				0378699E2AB98881006B835E /* sample.swift */,
 				03B9AF492A7F2E9E0013BB55 /* Assets.xcassets */,
 				03B9AF4B2A7F2E9E0013BB55 /* Preview Content */,
+				892F2AFE2FEB17AB0074BE7A /* claude_prompt.md */,
+				892F2B002FEB1CAA0074BE7A /* DESIGN.md */,
 			);
 			path = "Split Builder";
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				03B9AF532A7F30A50013BB55 /* Exercise.swift */,
+				89585D472FEB168F0084C9B5 /* SplitList.swift */,
 				03B9AF602A802A110013BB55 /* Day.swift */,
 				03B9AF622A802DF50013BB55 /* Split.swift */,
 				03B9AF662A81AE710013BB55 /* Theme.swift */,
@@ -194,7 +203,9 @@
 			files = (
 				03B9AF652A81AE1F0013BB55 /* Themes in Resources */,
 				03B9AF4D2A7F2E9E0013BB55 /* Preview Assets.xcassets in Resources */,
+				892F2AFF2FEB17AB0074BE7A /* claude_prompt.md in Resources */,
 				03B9AF4A2A7F2E9E0013BB55 /* Assets.xcassets in Resources */,
+				892F2B012FEB1CAA0074BE7A /* DESIGN.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +230,7 @@
 				03B9AF562A7F32900013BB55 /* ExerciseCardView.swift in Sources */,
 				03456EC12AAA7B2600B17884 /* SplitStore.swift in Sources */,
 				89585D462FD77DDB0084C9B5 /* DayFormView.swift in Sources */,
+				89585D482FEB168F0084C9B5 /* SplitList.swift in Sources */,
 				03B9AF542A7F30A50013BB55 /* Exercise.swift in Sources */,
 				03B9AF5F2A8024330013BB55 /* DayCardView.swift in Sources */,
 				03B9AF6B2A86E6480013BB55 /* ExerciseSelectCardView.swift in Sources */,
